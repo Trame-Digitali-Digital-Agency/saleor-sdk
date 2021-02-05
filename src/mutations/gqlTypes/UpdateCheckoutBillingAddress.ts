@@ -605,6 +605,7 @@ export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_check
    * List of available payment gateways.
    */
   availablePaymentGateways: UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UpdateCheckoutBillingAddress_checkoutBillingAddressUpdate {

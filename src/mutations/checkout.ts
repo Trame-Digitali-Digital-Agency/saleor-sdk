@@ -172,6 +172,21 @@ export const removeCheckoutPromoCode = gql`
   }
 `;
 
+export const addCheckoutNote = gql`
+  ${checkoutFragment}
+  ${checkoutErrorFragment}
+  mutation AddCheckoutNote($checkoutId: ID!, $message: String!) {
+    checkoutAddNote(checkoutId: $checkoutId, message: $message) {
+      checkout {
+        ...Checkout
+      }
+      errors: checkoutErrors {
+        ...CheckoutError
+      }
+    }
+  }
+`;
+
 export const createCheckoutPaymentMutation = gql`
   ${checkoutFragment}
   ${paymentFragment}

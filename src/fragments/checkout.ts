@@ -152,5 +152,6 @@ export const checkoutFragment = gql`
     availablePaymentGateways {
       ...PaymentGateway
     }
+    note
   }
 `;

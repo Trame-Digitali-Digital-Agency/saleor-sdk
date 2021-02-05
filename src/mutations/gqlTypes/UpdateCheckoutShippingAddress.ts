@@ -605,6 +605,7 @@ export interface UpdateCheckoutShippingAddress_checkoutShippingAddressUpdate_che
    * List of available payment gateways.
    */
   availablePaymentGateways: UpdateCheckoutShippingAddress_checkoutShippingAddressUpdate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UpdateCheckoutShippingAddress_checkoutShippingAddressUpdate {
@@ -1195,6 +1196,7 @@ export interface UpdateCheckoutShippingAddress_checkoutEmailUpdate_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: UpdateCheckoutShippingAddress_checkoutEmailUpdate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UpdateCheckoutShippingAddress_checkoutEmailUpdate_errors {

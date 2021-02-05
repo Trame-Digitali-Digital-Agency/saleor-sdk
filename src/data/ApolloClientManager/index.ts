@@ -18,6 +18,10 @@ import {
   AddCheckoutPromoCodeVariables,
 } from "../../mutations/gqlTypes/AddCheckoutPromoCode";
 import {
+  AddCheckoutNote,
+  AddCheckoutNoteVariables,
+} from "../../mutations/gqlTypes/AddCheckoutNote";
+import {
   CompleteCheckout,
   CompleteCheckoutVariables,
 } from "../../mutations/gqlTypes/CompleteCheckout";
@@ -161,10 +165,7 @@ export class ApolloClientManager {
     };
   };
 
-  resetPasswordRequest = async (
-    email: string,
-    redirectUrl: string
-  ) => {
+  resetPasswordRequest = async (email: string, redirectUrl: string) => {
     const { data, errors } = await this.client.mutate<
       ResetPasswordRequest,
       ResetPasswordRequestVariables
@@ -868,6 +869,39 @@ export class ApolloClientManager {
           data: this.constructCheckoutModel(
             data.checkoutRemovePromoCode.checkout
           ),
+        };
+      }
+      return {};
+    } catch (error) {
+      return {
+        error,
+      };
+    }
+  };
+
+  addNote = async (message: string, checkoutId: string) => {
+    try {
+      const { data, errors } = await this.client.mutate<
+        AddCheckoutNote,
+        AddCheckoutNoteVariables
+      >({
+        mutation: CheckoutMutations.addCheckoutNote,
+        variables: { checkoutId, message },
+      });
+
+      if (errors?.length) {
+        return {
+          error: errors,
+        };
+      }
+      if (data?.checkoutAddNote?.errors.length) {
+        return {
+          error: data?.checkoutAddNote?.errors,
+        };
+      }
+      if (data?.checkoutAddNote?.checkout) {
+        return {
+          data: this.constructCheckoutModel(data.checkoutAddNote.checkout),
         };
       }
       return {};

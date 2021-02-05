@@ -588,6 +588,7 @@ export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_check
    * List of available payment gateways.
    */
   availablePaymentGateways: UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UpdateCheckoutShippingMethod_checkoutShippingMethodUpdate_errors {

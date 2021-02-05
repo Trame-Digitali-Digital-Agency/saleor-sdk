@@ -586,6 +586,7 @@ export interface UserCheckoutDetails_me_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: UserCheckoutDetails_me_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UserCheckoutDetails_me {

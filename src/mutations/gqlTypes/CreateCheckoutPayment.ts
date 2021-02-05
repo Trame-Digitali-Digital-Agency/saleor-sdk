@@ -588,6 +588,7 @@ export interface CreateCheckoutPayment_checkoutPaymentCreate_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: CreateCheckoutPayment_checkoutPaymentCreate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface CreateCheckoutPayment_checkoutPaymentCreate_payment_creditCard {

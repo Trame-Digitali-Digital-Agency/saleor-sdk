@@ -588,6 +588,7 @@ export interface RemoveCheckoutPromoCode_checkoutRemovePromoCode_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: RemoveCheckoutPromoCode_checkoutRemovePromoCode_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface RemoveCheckoutPromoCode_checkoutRemovePromoCode_errors {

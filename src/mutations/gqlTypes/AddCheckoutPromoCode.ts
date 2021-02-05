@@ -588,6 +588,7 @@ export interface AddCheckoutPromoCode_checkoutAddPromoCode_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: AddCheckoutPromoCode_checkoutAddPromoCode_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface AddCheckoutPromoCode_checkoutAddPromoCode_errors {

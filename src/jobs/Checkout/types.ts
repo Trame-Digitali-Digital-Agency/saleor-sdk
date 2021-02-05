@@ -50,6 +50,10 @@ export interface RemovePromoCodeJobInput {
   promoCode: string;
 }
 
+export interface AddNoteJobInput {
+  checkoutId: string;
+  message: string;
+}
 export interface CreatePaymentJobInput {
   checkoutId: string;
   amount: number;

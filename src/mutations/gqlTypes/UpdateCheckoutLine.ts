@@ -588,6 +588,7 @@ export interface UpdateCheckoutLine_checkoutLinesUpdate_checkout {
    * List of available payment gateways.
    */
   availablePaymentGateways: UpdateCheckoutLine_checkoutLinesUpdate_checkout_availablePaymentGateways[];
+  note: string;
 }
 
 export interface UpdateCheckoutLine_checkoutLinesUpdate_errors {
