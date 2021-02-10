@@ -395,6 +395,34 @@ export class SaleorCheckoutAPI extends ErrorListener {
     };
   };
 
+  addNote = async (message: string): CheckoutResponse => {
+    const checkoutId = this.saleorState.checkout?.id;
+
+    if (checkoutId) {
+      const { data, dataError } = await this.jobsManager.run(
+        "checkout",
+        "addNote",
+        {
+          checkoutId,
+          message,
+        }
+      );
+
+      return {
+        data,
+        dataError,
+        pending: false,
+      };
+    }
+    return {
+      functionError: {
+        error: new Error("There was an error uploading this note."),
+        type: FunctionErrorCheckoutTypes.NOTE_ERROR,
+      },
+      pending: false,
+    };
+  };
+
   createPayment = async (input: CreatePaymentInput): CheckoutResponse => {
     const checkoutId = this.saleorState.checkout?.id;
     const billingAddress = this.saleorState.checkout?.billingAddress;

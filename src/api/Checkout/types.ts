@@ -62,6 +62,7 @@ export enum FunctionErrorCheckoutTypes {
   "SHIPPING_ADDRESS_NOT_SET",
   "ITEMS_NOT_ADDED_TO_CART",
   "EMAIL_NOT_SET",
+  "NOTE_ERROR",
 }
 export enum DataErrorCheckoutTypes {
   "SET_SHIPPING_ADDRESS",
